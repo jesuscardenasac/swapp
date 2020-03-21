@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 
+import { AmplifyAngularModule,AmplifyIonicModule,AmplifyService } from 'aws-amplify-angular';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -16,7 +18,12 @@ import { HomePage } from './home.page';
         path: '',
         component: HomePage
       }
-    ])
+    ]),
+    AmplifyAngularModule,
+    AmplifyIonicModule
+  ],
+  providers: [
+    AmplifyService
   ],
   declarations: [HomePage]
 })
