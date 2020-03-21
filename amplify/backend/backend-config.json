@@ -1,1 +1,10 @@
-{}
+{
+	"auth": {
+		"swapp9f3c4038": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}

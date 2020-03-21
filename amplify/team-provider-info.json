@@ -23,6 +23,11 @@
             "StackName": "amplify-swapp-dev-135831",
             "StackId": "arn:aws:cloudformation:us-east-1:523222480135:stack/amplify-swapp-dev-135831/db9a6b70-6b1f-11ea-9b86-123cb1b397a4",
             "AmplifyAppId": "d3h4xvw2w19bx9"
+        },
+        "categories": {
+            "auth": {
+                "swapp9f3c4038": {}
+            }
         }
     }
 }
