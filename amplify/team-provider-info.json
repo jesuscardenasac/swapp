@@ -10,6 +10,11 @@
             "StackName": "amplify-swapp-prod-134739",
             "StackId": "arn:aws:cloudformation:us-east-1:523222480135:stack/amplify-swapp-prod-134739/568948d0-6b1e-11ea-9a06-0e91a2a31d14",
             "AmplifyAppId": "d3h4xvw2w19bx9"
+        },
+        "categories": {
+            "auth": {
+                "swapp9f3c4038": {}
+            }
         }
     },
     "dev": {
