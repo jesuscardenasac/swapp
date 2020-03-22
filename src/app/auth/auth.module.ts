@@ -8,7 +8,7 @@ import { AuthPageRoutingModule } from './auth-routing.module';
 
 import { AuthPage } from './auth.page';
 
-import { AmplifyAngularModule,AmplifyIonicModule,AmplifyService } from 'aws-amplify-angular';
+import { AmplifyAngularModule,AmplifyIonicModule } from 'aws-amplify-angular';
 
 @NgModule({
   imports: [
@@ -18,9 +18,6 @@ import { AmplifyAngularModule,AmplifyIonicModule,AmplifyService } from 'aws-ampl
     AuthPageRoutingModule,
     AmplifyAngularModule,
     AmplifyIonicModule
-  ],
-  providers: [
-    AmplifyService
   ],
   declarations: [AuthPage]
 })

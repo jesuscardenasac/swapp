@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 
+import {AuthGuardService} from '../auth-guard.service'
+
 @NgModule({
   imports: [
     CommonModule,
@@ -14,7 +16,7 @@ import { HomePage } from './home.page';
     RouterModule.forChild([
       {
         path: '',
-        component: HomePage
+        component: HomePage, canActivate: [AuthGuardService]
       }
     ])
   ],
