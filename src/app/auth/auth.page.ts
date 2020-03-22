@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AmplifyService }  from 'aws-amplify-angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -12,18 +13,18 @@ export class AuthPage implements OnInit {
   user: any;
   greeting: string;
 
-  constructor(public amplifyService: AmplifyService) {
-    this.amplifyService.authStateChange$
-            .subscribe(authState => {
-                this.signedIn = authState.state === 'signedIn';
-                if (!authState.user) {
-                    this.user = null;
-                } else {
-                    this.user = authState.user;
-                    this.greeting = "Helloooooooooo " + this.user.username;
-                }
-      });
-   }
+  constructor(public amplifyService: AmplifyService, public router: Router) {
+    this.amplifyService.authStateChange$.subscribe(authState => {
+      this.signedIn = authState.state === 'signedIn';
+      if (!authState.user) {
+          this.user = null;
+      } else {
+          this.user = authState.user;
+          this.greeting = "Helloooooooooo " + this.user.username;
+          //this.router.navigate(['/home']);
+      }
+    });
+  }
 
   ngOnInit() {
   }
