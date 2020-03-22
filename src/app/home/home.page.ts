@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AmplifyService } from 'aws-amplify-angular';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +7,6 @@ import { AmplifyService } from 'aws-amplify-angular';
 })
 export class HomePage {
 
-  constructor(private amplifyService: AmplifyService) {}
+  constructor() {}
 
 }
