@@ -1,7 +1,15 @@
-<ion-header>
-    <ion-toolbar>
-      <ion-title>home</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    
+    <ion-tab-button tab="swapp">
+      <ion-icon name="swap-horizontal"></ion-icon>
+      <ion-label>Swap</ion-label>
+    </ion-tab-button>
 
-  <ion-button expand="full" (click)="signOut()">logout</ion-button>
+    <ion-tab-button tab="profile">
+      <ion-icon name="person-circle"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>

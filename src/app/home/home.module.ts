@@ -4,6 +4,8 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+import { SwappComponent } from './swapp/swapp.component';
+import { ProfileComponent } from './profile/profile.component';
 import { HomePage } from './home.page';
 
 
@@ -14,11 +16,20 @@ import { HomePage } from './home.page';
     IonicModule,
     RouterModule.forChild([
       {
+        path: 'swapp',
+        component: SwappComponent
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent
+      },
+      {
         path: '',
-        component: HomePage
+        redirectTo: '/home/swapp',
+        pathMatch: 'full'
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [SwappComponent,ProfileComponent,HomePage]
 })
 export class HomePageModule {}
