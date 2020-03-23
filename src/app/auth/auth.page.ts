@@ -20,8 +20,7 @@ export class AuthPage implements OnInit {
           this.user = null;
       } else {
           this.user = authState.user;
-          this.greeting = "Helloooooooooo " + this.user.username;
-          //this.router.navigate(['/home']);
+          this.router.navigateByUrl('/home');
       }
     });
   }
