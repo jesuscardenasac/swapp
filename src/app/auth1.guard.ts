@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import { AmplifyService } from 'aws-amplify-angular';
@@ -7,8 +7,8 @@ import { AmplifyService } from 'aws-amplify-angular';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
-
+export class Auth1Guard implements CanActivate {
+  
   signedIn: any;
   resolve = true;
 
@@ -29,14 +29,14 @@ export class AuthGuard implements CanActivate {
       }else
       this.resolve = true;*/
 
-      if(authState.state == 'signedIn'){
-        //this.router.navigate(['home']);
-        //this.resolve = false;
+      if(authState.state != 'signedIn'){
+        this.router.navigate(['auth']);
+        this.resolve = false;
       }
 
       return this.resolve;
     });
 
   }
-  
+
 }
