@@ -8,7 +8,6 @@ import { SwappComponent } from './swapp/swapp.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomePage } from './home.page';
 import { AuthGuard } from '../auth.guard';
-import { Auth1Guard } from '../auth1.guard';
 
 
 @NgModule({
@@ -20,7 +19,7 @@ import { Auth1Guard } from '../auth1.guard';
       {
         path: '',
         component: HomePage,
-        canActivate:[Auth1Guard],
+        canActivate:[AuthGuard],
         children: [
           {
             path:'',
@@ -40,6 +39,7 @@ import { Auth1Guard } from '../auth1.guard';
       }
     ])
   ],
-  declarations: [SwappComponent,ProfileComponent,HomePage]
+  declarations: [SwappComponent,ProfileComponent,HomePage],
+  providers:[AuthGuard]
 })
 export class HomePageModule {}

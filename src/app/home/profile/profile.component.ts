@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Auth } from 'aws-amplify'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -7,12 +8,18 @@ import { Auth } from 'aws-amplify'
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
+  auth: any;
 
-  constructor() { }
+  constructor(public router:Router) {
+    this.auth = Auth;
+   }
 
   signOut() {
-    Auth.signOut()
-      .then(data => console.log(data))
+    this.auth.signOut()
+      .then(data => {
+        console.log(data);
+        this.router.navigate(['auth']);
+      })
       .catch(err => console.log(err));
   }
 

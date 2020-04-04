@@ -24,13 +24,13 @@ export class AuthGuard implements CanActivate {
       console.log(authState.state == 'signedIn' && state.url == '/auth');
       console.log(this.router);
       
-      if/*(state.url != '/auth' && authState.state != 'signedIn'){
+      if(state.url != '/auth' && authState.state != 'signedIn'){
         console.log(this.router.navigate(['auth']));
         this.resolve = false;
-      }else if*/(authState.state == 'signedIn'/* && state.url == '/auth'*/){
+      }else if(authState.state == 'signedIn' && state.url == '/auth'){
         console.log(this.router.navigate(['home']));
         this.resolve = false;
-      }/*else this.resolve = true;*/
+      }else this.resolve = true;
 
       return this.resolve;
     });

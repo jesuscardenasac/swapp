@@ -5,7 +5,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { AuthPageRoutingModule } from './auth-routing.module';
 import { AuthPage } from './auth.page';
-import { AmplifyAngularModule,AmplifyIonicModule } from 'aws-amplify-angular';
+import { AmplifyAngularModule, AmplifyIonicModule } from 'aws-amplify-angular';
+import { AuthGuard } from '../auth.guard';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { AmplifyAngularModule,AmplifyIonicModule } from 'aws-amplify-angular';
     AmplifyAngularModule,
     AmplifyIonicModule
   ],
-  declarations: [AuthPage]
+  declarations: [AuthPage],
+  providers:[AuthGuard]
 })
 export class AuthPageModule {}

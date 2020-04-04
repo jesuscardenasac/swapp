@@ -14,25 +14,23 @@ export class AuthPage implements OnInit {
   greeting: string;
 
   constructor(public amplifyService: AmplifyService, public router: Router) {
-    /*this.amplifyService.authStateChange$.subscribe(authState => {
+
+  }
+
+  ngOnInit() {
+
+    this.amplifyService.authStateChange$.subscribe(authState => {
       
       this.signedIn = authState.state === 'signedIn';
       console.log('changed ' + this.signedIn);
       
-      if (!authState.user) {
-          this.user = null;
-      } else {
-          this.user = authState.user;
-      }
-      
       if(this.signedIn){
+        this.user = authState.user;
         this.router.navigate(['home']);
       }
 
-    });*/
-  }
+    });
 
-  ngOnInit() {
   }
 
 }
