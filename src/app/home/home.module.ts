@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 import { SwappComponent } from './swapp/swapp.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomePage } from './home.page';
+import { AuthGuard } from '../auth.guard';
+import { Auth1Guard } from '../auth1.guard';
 
 
 @NgModule({
@@ -16,17 +18,25 @@ import { HomePage } from './home.page';
     IonicModule,
     RouterModule.forChild([
       {
-        path: 'swapp',
-        component: SwappComponent
-      },
-      {
-        path: 'profile',
-        component: ProfileComponent
-      },
-      {
         path: '',
-        redirectTo: '/home/swapp',
-        pathMatch: 'full'
+        component: HomePage,
+        canActivate:[Auth1Guard],
+        children: [
+          {
+            path:'',
+            redirectTo:'swapp',
+            pathMatch: 'full'
+
+          },
+          {
+            path: 'swapp',
+            component: SwappComponent
+          },
+          {
+            path: 'profile',
+            component: ProfileComponent
+          }
+        ]
       }
     ])
   ],

@@ -18,21 +18,18 @@ export class Auth1Guard implements CanActivate {
   canActivate(next: ActivatedRouteSnapshot,state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
     return this.amplifyService.authStateChange$.map((authState)  => {
+
+      console.log(state.url,authState.state);
+      console.log(state.url != '/auth' && authState.state != 'signedIn');
+      console.log(authState.state == 'signedIn' && state.url == '/auth');
       
-      /*if(state.url != '/auth' && authState.state != 'signedIn'){
+      if(/*state.url != '/auth' &&*/ authState.state != 'signedIn'){
         this.router.navigate(['auth']);
         this.resolve = false;
-      }else if(authState.state == 'signedIn' && state.url == '/auth'){
-        return true;
+      }/*else if(authState.state == 'signedIn' && state.url == '/auth'){
         this.router.navigate(['home']);
         this.resolve = false;
-      }else
-      this.resolve = true;*/
-
-      if(authState.state != 'signedIn'){
-        this.router.navigate(['auth']);
-        this.resolve = false;
-      }
+      }else this.resolve = true;*/
 
       return this.resolve;
     });

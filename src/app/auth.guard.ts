@@ -18,21 +18,19 @@ export class AuthGuard implements CanActivate {
   canActivate(next: ActivatedRouteSnapshot,state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
     return this.amplifyService.authStateChange$.map((authState)  => {
-      
-      /*if(state.url != '/auth' && authState.state != 'signedIn'){
-        this.router.navigate(['auth']);
-        this.resolve = false;
-      }else if(authState.state == 'signedIn' && state.url == '/auth'){
-        return true;
-        this.router.navigate(['home']);
-        this.resolve = false;
-      }else
-      this.resolve = true;*/
 
-      if(authState.state == 'signedIn'){
-        this.router.navigate(['home']);
+      console.log(state.url,authState.state);
+      console.log(state.url != '/auth' && authState.state != 'signedIn');
+      console.log(authState.state == 'signedIn' && state.url == '/auth');
+      console.log(this.router);
+      
+      if/*(state.url != '/auth' && authState.state != 'signedIn'){
+        console.log(this.router.navigate(['auth']));
         this.resolve = false;
-      }
+      }else if*/(authState.state == 'signedIn'/* && state.url == '/auth'*/){
+        console.log(this.router.navigate(['home']));
+        this.resolve = false;
+      }/*else this.resolve = true;*/
 
       return this.resolve;
     });
