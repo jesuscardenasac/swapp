@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AmplifyService }  from 'aws-amplify-angular';
 import { Router } from '@angular/router';
 
@@ -7,14 +7,16 @@ import { Router } from '@angular/router';
   templateUrl: './auth.page.html',
   styleUrls: ['./auth.page.scss'],
 })
-export class AuthPage implements OnInit {
+export class AuthPage implements OnInit,OnDestroy {
 
   signedIn: boolean;
   user: any;
   greeting: string;
 
   constructor(public amplifyService: AmplifyService, public router: Router) {
+  }
 
+  ngOnDestroy() {
   }
 
   ngOnInit() {
@@ -26,7 +28,7 @@ export class AuthPage implements OnInit {
       
       if(this.signedIn){
         this.user = authState.user;
-        this.router.navigate(['home']);
+        this.router.navigate(['/home']);
       }
 
     });
