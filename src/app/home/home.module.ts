@@ -8,6 +8,7 @@ import { SwappComponent } from './swapp/swapp.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomePage } from './home.page';
 import { AuthGuard } from '../auth.guard';
+import { NewTransPopOverComponent } from './new-trans-pop-over/new-trans-pop-over.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { AuthGuard } from '../auth.guard';
       }
     ])
   ],
-  declarations: [SwappComponent,ProfileComponent,HomePage],
-  providers:[AuthGuard]
+  declarations: [SwappComponent,ProfileComponent,HomePage,NewTransPopOverComponent],
+  providers:[AuthGuard],
+  entryComponents: [NewTransPopOverComponent]
 })
 export class HomePageModule {}
