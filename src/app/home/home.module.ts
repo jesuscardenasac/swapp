@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { HomePage } from './home.page';
 import { AuthGuard } from '../auth.guard';
 import { NewTransPopOverComponent } from './new-trans-pop-over/new-trans-pop-over.component';
+import { ItemTransactionComponent } from './item-transaction/item-transaction.component';
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { NewTransPopOverComponent } from './new-trans-pop-over/new-trans-pop-ove
       }
     ])
   ],
-  declarations: [SwappComponent,ProfileComponent,HomePage,NewTransPopOverComponent],
+  declarations: [SwappComponent,ProfileComponent,HomePage,NewTransPopOverComponent,ItemTransactionComponent],
   providers:[AuthGuard],
   entryComponents: [NewTransPopOverComponent]
 })
