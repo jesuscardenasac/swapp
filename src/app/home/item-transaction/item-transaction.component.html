@@ -1,17 +1,17 @@
-<ion-item>
+<ion-item class="item-transaction">
   <ion-grid>
     <ion-row>
-      <ion-col size="5" class="ion-no-padding">
+      <ion-col size="11" class="ion-no-padding">
         <ion-grid class="ion-no-padding">
           <ion-row>
-            <ion-col size="4">
+            <ion-col size="8">
               <ion-item class="ion-no-padding no-padding-end-start" lines="none">
                 <ion-avatar>
                   <img src="assets/australia.png">
                 </ion-avatar>
               </ion-item>
             </ion-col>
-            <ion-col size="8" class="ion-align-self-center">
+            <ion-col size="16" class="ion-align-self-center">
               <ion-grid>
                 <ion-row>
                   <ion-col class="ion-text-center">
@@ -20,7 +20,7 @@
                 </ion-row>
                 <ion-row>
                   <ion-col class="ion-text-center">
-                    {{9999 | currency:'AUD'}}
+                    {{9999 | currency}}
                   </ion-col>
                 </ion-row>
               </ion-grid>
@@ -31,10 +31,10 @@
       <ion-col size="2" class="ion-no-padding ion-align-self-center ion-text-center">
           <ion-icon name="arrow-forward-outline"></ion-icon>
       </ion-col>
-      <ion-col size="5" class="ion-no-padding">
+      <ion-col size="11" class="ion-no-padding">
         <ion-grid class="ion-no-padding">
           <ion-row>
-            <ion-col size="8" class="ion-align-self-center">
+            <ion-col size="16" class="ion-align-self-center">
               <ion-grid>
                 <ion-row>
                   <ion-col class="ion-text-center">
@@ -43,12 +43,12 @@
                 </ion-row>
                 <ion-row>
                   <ion-col class="ion-text-center">
-                    {{99000000 | currency}}
+                    {{9900000 | currency:'':'':'1.0-0'}}
                   </ion-col>
                 </ion-row>
               </ion-grid>
             </ion-col>
-            <ion-col size="4" class="ion-no-padding">
+            <ion-col size="8" class="ion-no-padding">
               <ion-item class="ion-no-padding no-padding-end-start" lines="none">
                 <ion-avatar>
                   <img src="assets/colombia.png">
@@ -57,11 +57,6 @@
             </ion-col>
           </ion-row>
         </ion-grid>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col class="ion-text-center ion-no-padding">
-        <ion-label color="primary">1 AUD = 2250 COP</ion-label>
       </ion-col>
     </ion-row>
     <ion-row>
